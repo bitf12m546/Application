@@ -28,14 +28,14 @@
             $('#loginError').hide();
             $("#loginSubmit").click(function (e)
             {
-                var name = document.getElementById('name').value;
+                varemail = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
 
                 var errorCount = 0;
 
-                if (name.length == 0)
+                if (email.length == 0)
                 {
-                    document.getElementById('name').style.borderColor = "red";
+                    document.getElementById('email').style.borderColor = "red";
                     $('#loginError').fadeIn();
                     errorCount++;
                 }
@@ -74,10 +74,10 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-3 text-right">
-                                    Username:
+                                    Email:
                                 </div>
                                 <div class="col-lg-7">
-                                    <input class="form-control" id="name" name="Name" type="text">
+                                    <input class="form-control" id="email" name="Email" type="email">
                                 </div>
                             </div>
                             <br />

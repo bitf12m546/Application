@@ -14,7 +14,7 @@
 {
     <div class="row" style="width:70%; margin-left:15%; margin-top:5%">
         <div class="col-lg-4">
-            <a href="~/Home/ShowItem?id=@(i.Id)"><img src="~/Content/themes/base/images/@(i.Name).jpg" style="margin-left: 3%; width: 300px; height: 200px" /></a>
+            <a href="~/Home/ShowItem?id=@(i.Id)"><img src="~/Content/themes/base/images/@(i.Id).jpg" style="margin-left: 3%; width: 300px; height: 200px" /></a>
         </div>
         <div class="col-lg-6">
             <h4 style="margin-left:6%">@(i.Name)</h4>
@@ -22,8 +22,16 @@
                 <strong>Price: </strong>@(i.Price)<br>
             <p>
         </div>
+        @if (Session["user"] == null)
+        {
+            <input type="button" class="navbar-btn btn btn-primary pull-right" data-toggle="modal" data-target="#loginModal" value="Login to order" style="margin-right:0.5%">
+        }
+        else
+        {
+            <input type="button" class="navbar-btn btn btn-primary pull-right" data-toggle="modal" data-target="#confirmModal" value="Order Now!" style="margin-right:0.5%">
+        }
     </div>
-            @*<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:30%">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,7 +47,7 @@
             </div>
         </div>
     </div>
-</div>*@
+</div>
 }
     <br><br><br>
 
