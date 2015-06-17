@@ -6,7 +6,7 @@
 @using Application.Models
 @model Application.Models.Item
 
-@using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { style = "width:50%; margin-right: auto; margin-left: auto; border: 1px" }))
+@using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { style = "width:50%; margin-right: auto; margin-left: auto; border: 1px", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
