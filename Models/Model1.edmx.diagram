@@ -13,6 +13,11 @@
         <EntityTypeShape EntityType="SiteDataModel.Order" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="SiteDataModel.Comment" Width="1.5" PointX="3" PointY="7" />
         <AssociationConnector Association="SiteDataModel.FK_Comment_ToItem" />
+        <AssociationConnector Association="SiteDataModel.FK_Comment_ToUser" />
+        <AssociationConnector Association="SiteDataModel.FK_Order_ToItem" />
+        <AssociationConnector Association="SiteDataModel.FK_Order_ToUser" />
+        <AssociationConnector Association="SiteDataModel.FK_Training_ToCourse" />
+        <AssociationConnector Association="SiteDataModel.FK_Training_ToUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

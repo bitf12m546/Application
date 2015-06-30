@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    @using Application.Models
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
@@ -106,23 +107,23 @@
              <a class="navbar-brand" href="~/Home/Index" style="color:cadetblue">S.H.I.E.L.D.</a>
          </div>
          <div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="~/Home/Products" style="color:white">Products</a>
-                </li>
-                <li>
-                    <a href="~/Home/Services" style="color:white">Services</a>
-                </li>
-                <li>
-                    <a href="~/Home/Employment" style="color:white">Employment</a>
-                </li>
-                <li>
-                    <a href="~/Home/Training" style="color:white">Training</a>
-                </li>
-                <li>
-                    <a href="~/Home/Contact" style="color:white">Contact</a>
-                </li>
-            </ul>
+             <ul class="nav navbar-nav">
+                 <li>
+                     <a href="~/Home/Products" style="color:white">Products</a>
+                 </li>
+                 <li>
+                     <a href="~/Home/Services" style="color:white">Services</a>
+                 </li>
+                 <li>
+                     <a href="~/Home/Employment" style="color:white">Employment</a>
+                 </li>
+                 <li>
+                     <a href="~/Home/Training" style="color:white">Training</a>
+                 </li>
+                 <li>
+                     <a href="~/Home/Contact" style="color:white">Contact</a>
+                 </li>
+             </ul>
              @if(Session["user"] == null)
              {
              <a class="navbar-btn btn btn-primary pull-right" style="margin-right:0.5%" href="~/Home/Register">Register</a>
@@ -130,13 +131,15 @@
              }
              else
              {
+                 User u = (User)Session["user"];
                 <a class="navbar-btn btn btn-primary pull-right" style="margin-right:0.5%" href="~/User/Logout">Logout</a>
+                <a class="navbar-btn btn btn-default pull-right" style="margin-right:0.5%" href="~/Home/Profile">@(u.Name)</a>
              }
-                 <form class="navbar-form pull-right" role="search" action="/Home/Search" method="post">
+                 <form class="navbar-form pull-right" role="search" action="/Home/Search" method="post" id="s">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search" name="input" id="input" />
                 </div>
-                     <a href="~/Home/Search" class="btn btn-info btn-default"><span class="glyphicon glyphicon-search"></span></a>
+                     <a href="javascript:{}" onclick="document.getElementById('s').submit(); return false;" class="btn btn-info btn-default"><span class="glyphicon glyphicon-search"></span></a>
             </form>
         </div>
     </nav>
